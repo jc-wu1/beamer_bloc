@@ -12,11 +12,13 @@ import 'bloc/authentication_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   final storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorage.webStorageDirectory
         : await getTemporaryDirectory(),
   );
+
   HydratedBlocOverrides.runZoned(
     () => runApp(
       MyApp(

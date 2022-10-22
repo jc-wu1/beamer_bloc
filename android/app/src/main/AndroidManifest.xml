@@ -27,20 +27,15 @@
             </intent-filter>
 
             <!-- Deep linking -->
-            <activity android:name=".MainActivity">
+            <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
             <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="example.com/link" android:scheme="http"/>
-                <data android:host="example.com/link" android:scheme="https"/>
-                <data
-                        android:host="deeplinkingdemoapp.page.link"
-                        android:scheme="https"/>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" android:host="testing.com" />
+                <data android:scheme="https" />
             </intent-filter>
-            </activity>
 
-            <!-- -->
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
